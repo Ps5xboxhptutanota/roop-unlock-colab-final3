@@ -1,6 +1,10 @@
---extra-index-url https://download.pytorch.org/whl/cu118
+# PyTorch with CUDA 12.x (instead of cu118)
+torch==2.0.1+cu124
+torchvision==0.15.2+cu124
+torchaudio==2.0.2+cu124
+--extra-index-url https://download.pytorch.org/whl/cu124
 
-torch==2.0.1
+# Core dependencies
 numpy==1.24.3
 opencv-python==4.8.0.74
 onnx==1.14.0
@@ -11,10 +15,14 @@ customtkinter==5.2.0
 tkinterdnd2==0.3.0; sys_platform != 'darwin' and platform_machine != 'arm64'
 tkinterdnd2-universal==1.7.3; sys_platform == 'darwin' and platform_machine == 'arm64'
 pillow==10.0.0
+
+# ONNX Runtime GPU compatible with current CUDA
+onnxruntime-gpu==1.15.1; sys_platform != 'darwin'
 onnxruntime==1.15.1; python_version != '3.9' and sys_platform == 'darwin' and platform_machine != 'arm64'
 onnxruntime-coreml==1.13.1; python_version == '3.9' and sys_platform == 'darwin' and platform_machine != 'arm64'
 onnxruntime-silicon==1.13.1; sys_platform == 'darwin' and platform_machine == 'arm64'
-onnxruntime-gpu==1.15.1; sys_platform != 'darwin'
+
+# ML / AI extras
 tensorflow==2.14.0
 protobuf==4.23.4
 tqdm==4.65.0
